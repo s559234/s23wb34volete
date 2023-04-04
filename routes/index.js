@@ -7,3 +7,10 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
+var count=20;
+var change=-1;
+function doReduce(){
+  count+=change;
+  change-=1;
+  document.getElementById("reduce").innerHTML="Count" +count+" with change "+ change; 
+}
