@@ -3,3 +3,20 @@ extends layout
 block content
   h1= title
   p Welcome back to #{title} modifed by Sai Prashanth Volete
+
+  - results = [{ drink: "Coke", size: "large", cost: 300 },{ drink: "Pepsi", size: "med", cost: 150 },{ drink: "Fanta", size: "small", cost: 100 }];
+  div.container-fluid 
+    -
+    div.row 
+    -
+    each item in results
+        div.col-sm-6
+            h2= item.drink
+            p= item.drink_size
+            p= "cost: $"+item.cost.toFixed(2)
+            div.row
+                each prop, i in Object.keys(item)
+                    div.col-sm-2
+                        p #{Object.keys(item)[i]}: #{item[prop]}
+
+    
