@@ -9,14 +9,18 @@ block content
     -
     div.row 
     -
-    each item in results
+    each item, index in results
         div.col-sm-6
             h2= item.drink
-            p= item.drink_size
+            p= item.drink_size 
             p= "cost: $"+item.cost.toFixed(2)
             div.row
                 each prop, i in Object.keys(item)
-                    div.col-sm-2
+                    div(col-sm-2,  onclick=`buy(${index})`)
                         p #{Object.keys(item)[i]}: #{item[prop]}
 
-    
+        
+        script.
+            function buy (index){
+                alert (`You purchased item ${index+1}`)    
+            }
