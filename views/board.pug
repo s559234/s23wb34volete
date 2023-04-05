@@ -20,13 +20,16 @@ block content
         table#outer
         - for(let i=1; i<= rows; i++) {
             tr#middle
+            
                 - for (let j = 1; j <= cols; j++) {
+                    
                     if i==j
                         td=1+" "
                     else if i>j
                         td=0+" "
                     else 
-                        td=j+" "
+                        td=j-i+1+" "
+                       
                 -}
                 br
         -}
