@@ -4,7 +4,7 @@ block content
   h1= title
   p Welcome back to #{title} modifed by Sai Prashanth Volete
 
-  - results = [{ drink_type: "Coke", drink_size: "large", drink_cost: 300 },{ drink_type: "Pepsi", drink_size: "med", drink_cost: 150 },{ drink_type: "Fanta", drink_size: "small", drink_cost: 100 }];
+  - results = [{ drink_type: "Coke", drink_size: "large", drink_cost: 300 },{ drink_type: "Pepsi", drink_size: "med", drink_cost: 150 },{ drink_type: "Fanta", drink_size: "small", cost: 100 }];
   div.container-fluid 
     -
     div.row 
@@ -13,7 +13,6 @@ block content
         div.col-sm-6
             h2= item.drink
             p= item.drink_size 
-            p= "cost: $"+item.cost.toFixed(2)
             div.row
                 each prop, i in Object.keys(item)
                     div(col-sm-2,  onclick=`buy(${index})`)
